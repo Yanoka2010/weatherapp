@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Weather App</title>
@@ -8,14 +9,18 @@
 
 <body>
 
+<div class="container">
+
 <h1>Weather App</h1>
 
 <form id="weatherForm">
-<input type="text" id="cityInput" placeholder="Enter city">
-<button type="submit">Search</button>
+<input type="text" id="cityInput" placeholder="Enter city..." required>
+<button>Search</button>
 </form>
 
-<div id="weatherResult"></div>
+<div id="weather" class="weather-card hidden"></div>
+
+</div>
 
 <script src="script.js"></script>
 
