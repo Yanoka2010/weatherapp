@@ -1,4 +1,6 @@
-const apiKey = "15cbebbb4a35c14aa14265f41be7f212";
+import API_KEY from "./config.js";
+
+const apiKey = API_KEY;
 
 const form = document.getElementById("weatherForm");
 const cityInput = document.getElementById("cityInput");
@@ -12,11 +14,12 @@ e.preventDefault();
 
 const city = cityInput.value;
 
+const url =
+`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
 try{
 
-const response = await fetch(
-`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-);
+const response = await fetch(url);
 
 if(!response.ok){
 throw new Error("City not found");
@@ -59,3 +62,4 @@ weatherDiv.innerHTML = `
 `;
 
 }
+export default API_KEY;
